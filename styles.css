@@ -1,106 +1,186 @@
-*{
-    font-family: 'Noto sans';
+
+* {
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
 }
-body{
-    overflow-x: hidden;
-    padding: 0;
+
+body {
     margin: 0;
+    padding: 0;
     background-color: #B7D5D4;
+    overflow-x: hidden;
 }
-#welcome-section{
+
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #27afad;
+    padding: 12px 20px;
+    z-index: 10;
+}
+
+#list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#list a {
+    text-decoration: none;
+    color: #305252;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#list a:hover {
+    background-color: #77878B;
+}
+
+
+#welcome-section {
+    height: 100vh;
+    padding-top: 120px; /* space for navbar */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    text-align: center;
 }
-#welhori, #h2-hr{
-    background-color: #488286;
-    height: 2px;
+
+#welcome {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #373E40;
+}
+
+#welcomeparagraph {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #373E40;
+}
+
+/* HR lines */
+#welhori, .h2-hr {
     border: none;
-    width: 1000px;
+    height: 2px;
+    background-color: #2f9ba3;
+    width: 90%;
+    max-width: 900px;
+    margin: 15px auto;
 }
-#h2-hr{
-    width: 500px;
-}
-#welcome{
-    font-size: xxx-large;
-    font-weight: bold;
-    color: #373E40;
-}
-#welcomeparagraph{
-    font-size: larger;
-    padding: 0;
-    color: #373E40;
-}
-.nav{
-    display: flex;
-    justify-content: flex-start;
-    position: fixed;
-    width: 100%;
-    background-color: #27afad;
-    z-index: 10;
-}
-#nav-bar{
-    display: block;
-}
-#list{
-    font-size: x-large;
-    font-weight: bold;
-    display: flex;
-    gap: 30px;
-    list-style-type: none;
-}
-#nav-link:hover{
-    background-color: #77878B;
-    transition: ease-in-out 0.5s;
-    border-radius: 10px;
-}
-li{
-    text-decoration: none;
-}
- #nav-link{
-    padding: 10px;
-    text-decoration: none;
-    color: #305252;
-}
-#projects{
+
+#projects {
     background-color: #488286;
+    padding: 60px 0;
+    width: 100%;
 }
-#intro-header{
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+
+#intro-header {
+    text-align: center;
     text-transform: uppercase;
-    color: 49E981;
+    color: #373E40;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
 }
-.grid{
-    padding: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 4rem;
-    column-gap: 4rem;
+
+/* PROJECT GRID */
+.grid {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-}
-.project-image{
-    height: calc(100% - 1rem );
-    width: 100% ;
-    object-fit: cover;
-}
-#project-desc{
-    background-color: #B7D5D4;
-    text-align: center;
-    margin-top: -20px;
     padding: 20px;
-    border-radius: 0px 0px 10px 10px;
-    font-weight: bold;
-    font-size: x-large;
-    color:  #305252;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
-#aboutpara{
-    margin-left: 10px;
-    font-weight: bold;
 
+.project-tile {
+    background: #B7D5D4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-desc {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #305252;
+}
+
+
+#about {
+    padding: 40px 20px;
+}
+
+#aboutpara {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+/* Tablets */
+@media (max-width: 900px) {
+    #welcome {
+        font-size: 2.4rem;
+    }
+
+    #list {
+        font-size: 1rem;
+        gap: 18px;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .nav {
+        padding: 10px;
+    }
+
+    #list {
+        font-size: 0.9rem;
+        gap: 12px;
+    }
+
+    #welcome {
+        font-size: 1.9rem;
+    }
+
+    #welcomeparagraph {
+        font-size: 1rem;
+    }
+
+    #intro-header {
+        font-size: 1.2rem;
+    }
+
+    .project-desc {
+        font-size: 1rem;
+    }
+}
+
+/* Very small phones (iPhone SE, Android Mini) */
+@media (max-width: 380px) {
+    #list {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    #welcome {
+        font-size: 1.6rem;
+    }
 }
