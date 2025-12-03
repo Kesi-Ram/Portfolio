@@ -1,186 +1,184 @@
-
-* {
-    font-family: 'Noto Sans', sans-serif;
-    box-sizing: border-box;
+*{
+    font-family: 'Noto sans';
 }
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #B7D5D4;
+body{
     overflow-x: hidden;
-}
-
-
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #27afad;
-    padding: 12px 20px;
-    z-index: 10;
-}
-
-#list {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    margin: 0;
     padding: 0;
-    font-size: 1.2rem;
-    font-weight: bold;
+    margin: 0;
+    background-color: #B7D5D4;
 }
-
-#list a {
-    text-decoration: none;
-    color: #305252;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-#list a:hover {
-    background-color: #77878B;
-}
-
-
-#welcome-section {
-    height: 100vh;
-    padding-top: 120px; /* space for navbar */
+#welcome-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    height: 100vh;
 }
-
-#welcome {
-    font-size: 3rem;
+#welhori, #h2-hr{
+    background-color: #488286;
+    height: 2px;
+    border: none;
+    max-width: 1000px;
+    width: 100%;
+}
+#h2-hr{
+    width: 100%;
+    max-width: 500px;
+    background-color: black;
+}
+#welcome{
+    font-size: xxx-large;
     font-weight: bold;
     color: #373E40;
 }
-
-#welcomeparagraph {
-    margin-top: 10px;
-    font-size: 1.2rem;
+#welcomeparagraph{
+    font-size: larger;
+    padding: 0;
     color: #373E40;
 }
-
-/* HR lines */
-#welhori, .h2-hr {
-    border: none;
-    height: 2px;
-    background-color: #2f9ba3;
-    width: 90%;
-    max-width: 900px;
-    margin: 15px auto;
-}
-
-#projects {
-    background-color: #488286;
-    padding: 60px 0;
+.nav{
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
     width: 100%;
+    background-color: #27afad;
+    z-index: 10;
 }
-
-#intro-header {
-    text-align: center;
-    text-transform: uppercase;
-    color: #373E40;
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-}
-
-/* PROJECT GRID */
-.grid {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-}
-
-.project-tile {
-    background: #B7D5D4;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.project-image {
-    width: 100%;
-    height: auto;
+#nav-bar{
     display: block;
 }
-
-.project-desc {
-    text-align: center;
-    padding: 15px;
+#list{
+    font-size: x-large;
     font-weight: bold;
-    font-size: 1.2rem;
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+#nav-link:hover{
+    background-color: #77878B;
+    transition: ease-in-out 0.5s;
+    border-radius: 10px;
+}
+li{
+    text-decoration: none;
+}
+ #nav-link{
+    padding: 10px;
+    text-decoration: none;
     color: #305252;
 }
-
-
-#about {
-    padding: 40px 20px;
+#projects{
+    background-color: #488286;
 }
-
-#aboutpara {
+#intro-header{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: 49E981;
+}
+.grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 5px;
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    gap: 40px;
+}
+.project-image{
+    height: 300px;
+    max-width: 350px;
+    width: 100% ;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.project-desc{
+    background-color: #B7D5D4;
+    text-align: center;
+    margin-top: -20px;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: x-large;
+    color:  #305252;
 }
+#aboutpara{
+    margin-left: 10px;
+    font-weight: bold;
 
-
+}
+.project-tile{
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px ;
+}
 /* Tablets */
 @media (max-width: 900px) {
-    #welcome {
-        font-size: 2.4rem;
+
+    #welcomeparagraph{
+        font-size: 1.5rem;
+    }
+    #welcome{
+        font-size: 2.5rem;
+    }
+    #welhori{
+        width: 80%;
+    }
+    #list{
+        font-size: 1.5rem;
+        gap: 15px;
+        padding: 10px;
+    }
+    #intro-header{
+        font-size: 1.5rem;
+    }
+    .grid{
+        width: 100%;
     }
 
-    #list {
-        font-size: 1rem;
-        gap: 18px;
-    }
 }
 
 /* Phones */
 @media (max-width: 600px) {
-    .nav {
-        padding: 10px;
+        #welcomeparagraph{
+        font-size: 1rem;
     }
-
-    #list {
-        font-size: 0.9rem;
-        gap: 12px;
-    }
-
-    #welcome {
+    #welcome{
         font-size: 1.9rem;
     }
-
-    #welcomeparagraph {
-        font-size: 1rem;
+    #welhori{
+        width: 70%;
     }
-
-    #intro-header {
-        font-size: 1.2rem;
-    }
-
-    .project-desc {
+    #list{
         font-size: 1rem;
+        gap: 15px;
+        padding: 10px;
+    }
+    #intro-header{
+        font-size: 0.9rem;
     }
 }
 
 /* Very small phones (iPhone SE, Android Mini) */
 @media (max-width: 380px) {
-    #list {
-        font-size: 0.8rem;
-        gap: 8px;
+    #welcomeparagraph{
+        font-size: 1rem;
     }
-
-    #welcome {
-        font-size: 1.6rem;
+    #welcome{
+        font-size: 1.9rem;
+    }
+    #welhori{
+        width: 60%;
+    }
+    #list{
+        font-size: 0.5rem;
+        gap: 5px;
+        padding: 10px;
+    }
+    #intro-header{
+        font-size: 0.9rem;
     }
 }
